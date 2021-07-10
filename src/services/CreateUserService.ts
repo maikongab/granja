@@ -1,4 +1,4 @@
-
+import { hash } from "bcryptjs"
 
 interface IUserRequest{
     name: string;
@@ -11,6 +11,8 @@ class createUserService{
 
     async execute({name, email, admin, password} : IUserRequest){
 
+
+        const passwordHash =  await hash(password, 8);
     }
 }
 
